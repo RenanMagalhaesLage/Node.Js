@@ -4,6 +4,9 @@
     Alguns estudos e projetos que realizei em Node.js
   </p>
   <p>
+    Certos projetos são do curso de <a href="https://www.udemy.com/course/formacao-nodejs">Node.js da Udemy</a>
+  </p>
+  <p>
     <b> Projetos criados usando HTML, CSS, JavaScript, BootStrap, Express.js, Node.js</b>
   </p>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
