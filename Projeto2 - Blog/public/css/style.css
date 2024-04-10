@@ -1,0 +1,47 @@
+.btn-warning-white{
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning-white:hover{
+    color: #fff;
+    background-color: #e1aa03;
+    border-color: #e1aa03;
+}
+
+.centralizar{
+    text-align: center;
+    width: 15%;
+}
+
+.nav-item-login {
+    display: flex;
+    align-items: center;
+    margin-left: 36px;
+}
+
+.nav-link-login {
+    margin-left: -3px; /* ajuste o espaçamento conforme necessário */
+    text-decoration: none; /* para remover o sublinhado padrão */
+}
+
+.white-icon{
+    color: #fff;
+    display: inline-block; /* Garante que o SVG seja exibido como um bloco */
+}
+
+.icon-logout{
+    margin-top: 4px;
+    margin-left: 45px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1000px) { /* Define o estilo apenas para telas de celular */
+    .nav-item {
+        text-align: right; /* Centraliza o conteúdo horizontalmente */
+    }
+    .icon-logout{
+        margin-right: 18px;
+    }
+}

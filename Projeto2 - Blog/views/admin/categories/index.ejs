@@ -1,0 +1,55 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <h2 class="row d-flex justify-content-center">Categorias</h2>
+        <a class="btn btn-success" href="/admin/categories/new">Criar nova Categoria</a>
+        <hr>
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Slug</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% categories.forEach(category =>{%>
+                    <tr>
+                        <td><%= category.id%></td>
+                        <td><%= category.title%></td>
+                        <td><%= category.slug%></td>
+                        <td class="centralizar">
+                            <a href="/admin/categories/edit/<%= category.id%>" class="btn btn-warning-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36"><path fill="currentColor" d="m4.22 23.2l-1.9 8.2a2.06 2.06 0 0 0 2 2.5a2.14 2.14 0 0 0 .43 0L13 32l15.84-15.78L20 7.4Z" class="clr-i-solid clr-i-solid-path-1"/><path fill="currentColor" d="m33.82 8.32l-5.9-5.9a2.07 2.07 0 0 0-2.92 0L21.72 5.7l8.83 8.83l3.28-3.28a2.07 2.07 0 0 0-.01-2.93" class="clr-i-solid clr-i-solid-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                            </a>
+
+                            <form method="POST" action="/categories/delete" style="display: inline;" onsubmit="confirmDelete(event,this)">
+                                <input type="hidden" name="id" value="<%= category.id %>">
+                                <button href="" class="btn btn-danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M216 48h-40v-8a24 24 0 0 0-24-24h-48a24 24 0 0 0-24 24v8H40a8 8 0 0 0 0 16h8v144a16 16 0 0 0 16 16h128a16 16 0 0 0 16-16V64h8a8 8 0 0 0 0-16M112 168a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Zm48 0a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Zm0-120H96v-8a8 8 0 0 1 8-8h48a8 8 0 0 1 8 8Z"/></svg>
+                                </button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                <%})%>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+    function confirmDelete(event, form){
+        event.preventDefault();
+        var decision = confirm("Você quer deletar esta categoria?");
+        if(decision){
+            form.submit();
+        }
+    }
+</script>
+<%- include('../../partials/footer.ejs')%>

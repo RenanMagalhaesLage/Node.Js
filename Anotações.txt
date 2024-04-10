@@ -1,0 +1,58 @@
+MÓDULOS 
+
+Exportar uma função/variavel:
+    module.exports = nomeFunc;
+Importar a função/variavel:
+    var nomeFunc = require("./nomeArq");
+
+Exportar multiplas funções/variáveis
+    module.exports ={
+        func1,
+        func2,
+        func3
+    }
+Para usar essas funções em arquivos que importaram:
+    var nomeFunc = require("./nomeArq");
+    nomeFunc.func1(parametros);
+
+HTTP
+
+Criando um servidor http:
+    var http = require("http");
+    http.createServer(function(requisicao,resposta){
+        resposta.end("Bem vindo ao Servidor");
+    }).listen(numeroPorta);
+
+EXPRESS --> a seguir está os passos para instalação, siga os números em parênteses
+
+Conferir se possui npm instalado --> npm -v
+Iniciar um novo projeto --> npm init (1)
+npm --> node package manager
+comando de instalação do Express --> npm install express --save (2)
+comando de instalação sequelize --> npm install --save sequelize (3)
+comando para instalar mysql2 --> npm install --save mysql2 (4)
+
+INSTALAR BIBLIOTECA PARA SALVAR DADOS DE UM FORM
+npm install body-parser --save (5)
+
+EJS --> redenização/exibir do html
+comando de instalação do EJS --> npm install ejs --save (6)
+
+CARREGAMENTO AUTOMÁTICO
+
+npm install nodemon-g
+Para rodar: nodemon nomeArq.js
+
+================================================================
+Biblioteca para formatar texto, adicionar imagem, vídeo (estilo word/docs)
+nome: Tiny
+link: https://www.tiny.cloud/get-tiny/self-hosted/
+tradução do tinymce
+
+Biblioteca para "encriptar" senha --> tabela hash
+npm install --save bcryptjs (7)
+
+Biblioteca de sessões / autenticação
+npm install express-session --save (8)
+
+

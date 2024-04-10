@@ -1,0 +1,26 @@
+<%- include('./partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/style-login.css">
+</head> 
+    <body>
+        <div class="box-login">
+                <img src="img/icone.png" class="logo">
+                <h1>Universidade Horizonte</h1>
+                <h2>Bem Vindo!</h2>
+                <br>
+                <h3>Login</h3>
+                <form action="/unizon/authentication" method="POST" >
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                        <label for="floatingInput">E-mail</label>
+                      </div>
+                      <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                        <label for="floatingPassword">Senha</label>
+                      </div>
+                    <br><br>
+                    <input class="btn btn-success" type="submit" name="submit" value="Enviar">
+                </form>
+        </div>
+        <h4></h4>
+    </body>
+    <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,21 @@
+/*CORES #2E386B   #FFD983  #EFEADE*/
+
+body{
+    background-color: #EFEADE ;
+}
+
+.central{
+    padding-top: 135px;
+}
+
+.img-icone{
+    width: 150px;
+}
+
+.nav-background{
+    background-color:#F1DEB3;
+}
+
+#form-pergunta{
+    margin-top: 5vh;
+}

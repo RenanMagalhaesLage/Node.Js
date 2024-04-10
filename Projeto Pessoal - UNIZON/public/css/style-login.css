@@ -1,0 +1,47 @@
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #eb7d55, #ffd148 );
+  
+}
+
+.box-login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0px 0px 29px 16px rgba(0,0,0,0.2);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+h3{
+  text-align: left;
+}
+  /*
+  Laranja: #e05522
+  Laranja2: #ed8631
+  Laranja3:  #f8bd62
+  Amarelo: #ffd148
+  Marrom Claro: #44240e
+  Marrom Escuro: #29180c
+  Cinza claro: #e7eaeb
+  Cinza #c6c6c6
+  */
+
+.logo{
+  margin-bottom:40px ;
+}
+
+.btn{
+  padding: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+.btn:hover{
+  box-shadow: 0px 0px 34px -12px #198754;
+}

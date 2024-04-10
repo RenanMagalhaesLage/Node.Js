@@ -1,0 +1,24 @@
+{
+  "name": "projeto-pessoal---unizon",
+  "version": "1.0.0",
+  "description": "Projeto de criação de um sistema de uma faculdade fictícia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Renan Magalhães Lage",
+  "license": "ISC",
+  "dependencies": {
+    "alertifyjs": "^1.13.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.19.1",
+    "express-session": "^1.18.0",
+    "moment": "^2.30.1",
+    "moment-duration-format": "^2.3.2",
+    "mysql2": "^3.9.2",
+    "sequelize": "^6.37.1",
+    "sweetalert": "^2.1.2"
+  }
+}

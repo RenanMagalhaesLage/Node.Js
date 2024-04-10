@@ -1,0 +1,42 @@
+<div class="col-md-6">
+    <label for="inputName" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="inputName" name="name">
+  </div>
+  <div class="col-md-6">
+    <label for="inputLastName" class="form-label">Sobrenome</label>
+    <input type="text" class="form-control" id="inputLastName" name="lastName">
+  </div>
+  <div class="col-md-12">
+    <label for="inputEmail" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="nome@unizon.edu.br" name="email">
+  </div>
+  <div class="col-md-12">
+    <label for="inputPassword" class="form-label">Senha</label>
+    <input type="password" class="form-control" id="inputPassword" name="password">
+  </div>
+  <div class="col-md-7">
+    <label for="inputNumber" class="form-label">Telefone</label>
+    <input type="text" class="form-control" id="inputNumber" placeholder="(00) 00000-0000" name="cellphone">
+  </div>
+  <div class="col-5">
+    <label for="inputSex" class="form-label">Sexo</label>
+    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="sex" id="selectSex">
+      <option selected>Selecione</option>
+      <option value="1">Masculino</option>
+      <option value="2">Feminino</option>
+      <option value="3">Outro</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label for="inputDate" class="form-label">Data de Nascimento</label>
+    <input type="date" class="form-control" id="inputDate" name="birthdate" id="inputDate">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCurso" class="form-label">Curso</label>
+    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="course">
+      <option selected>Selecione</option>
+      <% cursos.forEach(curso=>{ %>
+        <option value="<%= curso.id %>"><%= curso.name %> </option>
+      <% })%>
+    </select>
+</div>

@@ -1,0 +1,212 @@
+<%- include('../partials/header.ejs') %>
+</head>
+<style>
+    body{
+      margin-bottom: 900px;
+    }
+    .formulario{
+    background: linear-gradient(to right, #eb7d55, #ffd148 );
+    }
+    .tela-formulario{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        box-shadow: 0px 0px 29px 16px rgba(0,0,0,0.2);
+        padding: 15px 30px 15px 30px;
+        border-radius: 15px;
+        width: 35%;
+    }
+    .btn-back{
+      color: #fff;
+      background-color: rgb(30, 28, 28);
+      border-color: rgb(30, 28, 28);
+    }
+    .btn-back:hover{
+      color: #fff;
+      background-color: rgb(14, 13, 13);
+    }
+    .btn-success:hover{
+      box-shadow: 0px 0px 34px -12px #198754;
+    }
+    .header {
+      display: flex;
+      align-items: center; /* Alinhar os itens verticalmente */
+    }
+
+    .header h1 {
+      margin-left: 120px; /* Adicionando espaço entre o link e o título */
+    }
+
+
+    @media only screen and (max-width: 760px) {
+      body{
+        margin-bottom: 1450px;
+      }
+      .tela-formulario{
+        width: 80%; /* Aumentando a largura do formulário para 80% da tela */
+        margin-top: 270px;
+      }
+      .header h1 {
+        margin-left: 20px; /* Adicionando espaço entre o link e o título */
+      }
+    }
+    @media only screen and (max-width: 800px) and (min-width:760px)  {
+      body{
+        margin-bottom: 800px;
+      }
+      .tela-formulario{
+        width: 80%; /* Aumentando a largura do formulário para 80% da tela */
+      }
+    }
+    @media only screen and (max-width: 1000px) and (min-width:800px)  {
+      body{
+        margin-bottom: 950px;
+      }
+      .tela-formulario{
+        width: 80%; /* Aumentando a largura do formulário para 80% da tela */
+      }
+    }
+    @media only screen and (max-width: 1300px) and (min-width:1000px)  {
+      body{
+        margin-bottom: 960px;
+      }
+      .tela-formulario{
+        width: 50%; /* Aumentando a largura do formulário para 80% da tela */
+      }
+    }
+    @media only screen and (min-width:1300px)  {
+      body{
+        margin-bottom: 870px;
+      }
+    }
+    
+</style>
+<body class="formulario">
+  <div class="tela-formulario">
+    <div class="header">
+      <a class="btn btn-back" href="/admin/professor">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M3.283 10.94a1.5 1.5 0 0 0 0 2.12l5.656 5.658a1.5 1.5 0 1 0 2.122-2.122L7.965 13.5H19.5a1.5 1.5 0 0 0 0-3H7.965l3.096-3.096a1.5 1.5 0 1 0-2.122-2.121z"/></g></svg>
+      </a>
+      <h1>Editar Professor</h1>
+    </div>
+    <form action="/professor/update/<%= professor.userId%>" method="POST" class="row g-3 " id="professorForm">
+        <div class="col-md-6">
+            <label for="inputName" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputName" name="name" value="<%= professor.user.name%>">
+        </div>
+        <div class="col-md-6">
+            <label for="inputLastName" class="form-label">Sobrenome</label>
+            <input type="text" class="form-control" id="inputLastName" name="lastName" value="<%= professor.user.lastName%>">
+        </div>
+        <div class="col-md-12">
+            <label for="inputEmail" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="nome@unizon.edu.br" name="email" value="<%= professor.user.email%>">
+        </div>
+        <div class="col-md-7">
+            <label for="inputNumber" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="inputNumber" placeholder="(00) 00000-0000" name="cellphone" value="<%= professor.user.cellphone%>">
+        </div>
+        <div class="col-5">
+            <label for="inputSex" class="form-label">Sexo</label>
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="sex" id="selectSex" >
+              <option value="1" <%= professor.user.sex === '1' ? 'selected' : '' %>>Masculino</option>
+              <option value="2" <%= professor.user.sex === '2' ? 'selected' : '' %>>Feminino</option>
+              <option value="3" <%= professor.user.sex === '3' ? 'selected' : '' %>>Outro</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="inputDate" class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control" id="inputDate" name="birthdate" id="inputDate" value="<%= professor.user.birthday%>">
+        </div>
+        <div class="col-md-4">
+            <label for="inputCurso" class="form-label">Curso</label>
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="course">
+              <% cursos.forEach(curso=>{ %>
+                <option value="<%= curso.id %>" <%= professor.cursoId === curso.id ? 'selected' : '' %>><%= curso.name %> </option>
+              <% })%>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="inputMoney" class="form-label">Salário</label>
+            <input type="text" class="form-control" id="inputMoney" name="salary" value="<%= professor.salary%>">
+          </div>
+          <div class="col-md-4">
+            <label for="inputTitulo" class="form-label">Titulação</label>
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="title">
+              <option value="Bacharel" <%= professor.title === 'Bacharel' ? 'selected' : '' %>>Bacharel</option>
+              <option value="Mestre" <%= professor.title === 'Mestre' ? 'selected' : '' %>>Mestre</option>
+              <option value="Doutor" <%= professor.title === 'Doutor' ? 'selected' : '' %>>Doutor</option>
+            </select>
+          </div>
+
+        <h3>Endereço</h3>
+        <div class="col-9">
+        <label for="inputAddress" class="form-label">Rua</label>
+        <input type="text" class="form-control" id="inputAddress" name="street" value="<%= professor.user.street%>">
+        </div>
+        <div class="col-md-3">
+        <label for="inputNum" class="form-label">Número</label>
+        <input type="text" class="form-control" id="inputNum" name="streetNumber" value="<%= professor.user.streetNumber%>">
+        </div>
+        <div class="col-12">
+        <label for="inputAddress2" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="inputAddress2" name="neighborhood" value="<%= professor.user.neighborhood%>">
+        </div>
+        <div class="col-md-8">
+        <label for="inputCity" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="inputCity" name="city" value="<%= professor.user.city%>">
+        </div>
+        <div class="col-md-4">
+        <label for="inputEstate" class="form-label">Estado</label>
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" name="state" id="selectState"> 
+            <option value="AC" <%= professor.user.state === 'AC' ? 'selected' : '' %>>AC</option>
+            <option value="AL" <%= professor.user.state === 'AL' ? 'selected' : '' %>>AL</option>
+            <option value="AP" <%= professor.user.state === 'AP' ? 'selected' : '' %>>AP</option>
+            <option value="AM" <%= professor.user.state === 'AM' ? 'selected' : '' %>>AM</option>
+            <option value="BA" <%= professor.user.state === 'BA' ? 'selected' : '' %>>BA</option>
+            <option value="CE" <%= professor.user.state === 'CE' ? 'selected' : '' %>>CE</option>
+            <option value="DF" <%= professor.user.state === 'DF' ? 'selected' : '' %>>DF</option>
+            <option value="ES" <%= professor.user.state === 'ES' ? 'selected' : '' %>>ES</option>
+            <option value="GO" <%= professor.user.state === 'GO' ? 'selected' : '' %>>GO</option>
+            <option value="MA" <%= professor.user.state === 'MA' ? 'selected' : '' %>>MA</option>
+            <option value="MT" <%= professor.user.state === 'MT' ? 'selected' : '' %>>MT</option>
+            <option value="MS" <%= professor.user.state === 'MS' ? 'selected' : '' %>>MS</option>
+            <option value="MG" <%= professor.user.state === 'MG' ? 'selected' : '' %>>MG</option>
+            <option value="PA" <%= professor.user.state === 'PA' ? 'selected' : '' %>>PA</option>
+            <option value="PB" <%= professor.user.state === 'PB' ? 'selected' : '' %>>PB</option>
+            <option value="PR" <%= professor.user.state === 'PR' ? 'selected' : '' %>>PR</option>
+            <option value="PE" <%= professor.user.state === 'PE' ? 'selected' : '' %>>PE</option>
+            <option value="PI" <%= professor.user.state === 'PI' ? 'selected' : '' %>>PI</option>
+            <option value="RJ" <%= professor.user.state === 'RJ' ? 'selected' : '' %>>RJ</option>
+            <option value="RN" <%= professor.user.state === 'RN' ? 'selected' : '' %>>RN</option>
+            <option value="RS" <%= professor.user.state === 'RS' ? 'selected' : '' %>>RS</option>
+            <option value="RO" <%= professor.user.state === 'RO' ? 'selected' : '' %>>RO</option>
+            <option value="RR" <%= professor.user.state === 'RR' ? 'selected' : '' %>>RR</option>
+            <option value="SC" <%= professor.user.state === 'SC' ? 'selected' : '' %>>SC</option>
+            <option value="SP" <%= professor.user.state === 'SP' ? 'selected' : '' %>>SP</option>
+            <option value="SE" <%= professor.user.state === 'SE' ? 'selected' : '' %>>SE</option>
+            <option value="TO" <%= professor.user.state === 'TO' ? 'selected' : '' %>>TO</option>
+        </select>
+        </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-success" id="subitButton">Editar</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+  document.getElementById('subitButton').addEventListener('click', function() {
+  var selectSex = document.getElementById('selectSex');
+  var selectCourse = document.getElementById('selectCourse');
+  var selectState = document.getElementById('selectState');
+  if (selectSex.value === 'Selecione' || selectState.value === 'Selecione' || selectCourse.value === 'Selecione' || inputDate.value === '' ) {
+    alert('Por favor, preencha todos os campos do formulário.');
+    event.preventDefault(); // Impede o envio do formulário
+  } else {
+    document.getElementById('professorForm').submit();
+  }
+});
+</script>
+<%- include('../partials/footer.ejs') %>
