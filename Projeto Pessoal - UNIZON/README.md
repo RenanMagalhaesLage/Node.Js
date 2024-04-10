@@ -29,6 +29,9 @@ Funções do <b>Professor</b>
 - [ ] Solicitação de cadastro de Matéria
 
 ## Imagens
+<p>Listagem de Matérias no perfil de Administrador</p>
+
+![image](https://github.com/RenanMagalhaesLage/Node.Js/assets/89847080/3f97bbdd-9c27-49ac-9650-cbed43bc3375)
 
 
 
