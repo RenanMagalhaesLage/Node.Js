@@ -1,0 +1,12 @@
+services:
+  nlw-letmeask-pg:
+    image: pgvector/pgvector:pg17
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: letmeaskdatabase
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
