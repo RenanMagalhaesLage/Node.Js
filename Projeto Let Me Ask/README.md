@@ -1,7 +1,7 @@
 <div align="center">
   <h1> Projeto Let Me Ask </h1>
   <p>
-    Projeto desenvolvido durante um evento da <b>Rocketseat</b>>.
+    Projeto desenvolvido durante um evento da <b>Rocketseat</b>.
   </p>
 </div>
 
@@ -84,6 +84,8 @@ npm start
 - `npm run dev` - Executa o servidor em modo de desenvolvimento com hot reload
 - `npm start` - Executa o servidor em modo de produção
 - `npm run db:seed` - Popula o banco de dados com dados de exemplo
+
+## 🖼️ Imagens do Projeto
 
 ## 🌐 Endpoints
 
